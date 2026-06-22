@@ -12,3 +12,11 @@
 *{
     font-family: Outfit;
 }
+
+@media (max-width:640px) {
+  a.active {
+  background-color: #18191b;
+  color: rgb(250, 245, 245);
+  font-weight: 600;
+}
+}
