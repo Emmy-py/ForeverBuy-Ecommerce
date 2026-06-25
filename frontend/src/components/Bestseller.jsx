@@ -14,7 +14,7 @@ const Bestseller = () => {
     }, [products])
 
     return (
-        <div className="my-10">
+        <div className="my-7">
 
             <div className="flex flex-col items-center justify-center">
                 <Title text1={'BEST'} text2={'SELLER'} />
