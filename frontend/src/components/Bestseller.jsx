@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useMemo } from "react"
 import { ShopContext } from "../context/ShopContext"
 import Title from "./Title"
 import ProductItem from "./ProductItem"
@@ -6,12 +6,10 @@ import ProductItem from "./ProductItem"
 const Bestseller = () => {
 
     const { products } = useContext(ShopContext)
-    const [bestseller, setBestseller] = useState([])
-
-    useEffect(() => {
-        const bestProducts = products.filter(item => item.bestseller)
-        setBestseller(bestProducts.slice(0, 5))
-    }, [products])
+    const bestseller = useMemo(
+        () => products.filter(item => item.bestseller).slice(0, 5),
+        [products]
+    )
 
     return (
         <div className="my-7">
@@ -32,7 +30,7 @@ const Bestseller = () => {
                     <ProductItem
                         key={index}
                         id={item._id}
-                        image={item.image}
+                        image={item.image[0]}
                         name={item.name}
                         price={item.price}
                     />

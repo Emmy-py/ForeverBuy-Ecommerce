@@ -1,4 +1,4 @@
-import  { useContext, useEffect, useState } from 'react'
+import { useContext, useMemo } from 'react'
 import { ShopContext } from '../context/ShopContext'
 import Title from './Title'
 import ProductItem from './ProductItem'
@@ -6,11 +6,7 @@ import ProductItem from './ProductItem'
 export default function LatestCollections() {
 
   const { products } = useContext(ShopContext)
-  const [latestProduct, setLatestProducts] = useState([])
-
-  useEffect(() => {
-    setLatestProducts(products.slice(0, 10))
-  }, [products])
+  const latestProduct = useMemo(() => products.slice(0, 10), [products])
 
 
   return (
@@ -31,7 +27,7 @@ export default function LatestCollections() {
           <ProductItem
             key={index}
             id={item._id}
-            image={item.image}
+            image={item.image[0]}
             name={item.name}
             price={item.price}
           />
