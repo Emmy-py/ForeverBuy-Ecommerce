@@ -131,21 +131,6 @@ const PlaceOrder = () => {
               <img className="h-5 mx-4" src={assets.stripe_logo} alt="Stripe" />
             </div>
 
-            {/* Razorpay */}
-            <div
-              onClick={() => setMethod("razorpay")}
-              className={`flex items-center gap-3 border p-3 px-5 cursor-pointer rounded transition-colors ${
-                method === "razorpay" ? "border-green-400" : "border-gray-300"
-              }`}
-            >
-              <div
-                className={`w-3.5 h-3.5 rounded-full border-2 shrink-0 ${
-                  method === "razorpay" ? "border-green-500 bg-green-500" : "border-gray-400"
-                }`}
-              />
-              <img className="h-5 mx-4" src={assets.razorpay_logo} alt="Razorpay" />
-            </div>
-
             {/* Cash on Delivery */}
             <div
               onClick={() => setMethod("cod")}

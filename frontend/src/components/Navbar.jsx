@@ -101,6 +101,13 @@ const Navbar = () => {
           </p>
         </Link>
 
+        <Link
+          to="/admin"
+          className="hidden sm:block text-[11px] border border-gray-400 px-3 py-1 rounded hover:bg-gray-100 text-gray-600 transition-colors"
+        >
+          Admin
+        </Link>
+
         <div>
           <img
             onClick={() => {
@@ -164,6 +171,13 @@ const Navbar = () => {
               to="/login"
             >
               LOGIN / SIGN UP
+            </NavLink>
+            <NavLink
+              onClick={() => setVisible(false)}
+              className="transiction-none py-2 pl-6 border-t border-gray-200 pt-4 text-gray-500"
+              to="/admin"
+            >
+              ADMIN
             </NavLink>
           </div>
         </div>
